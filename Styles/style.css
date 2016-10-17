@@ -2,21 +2,78 @@
 	padding: 0;
 	margin: 0;
 }
+
+body {
+	background-color: #222; 
+}
+
 ul {
-	width: 100%;
-	height: 0.5%;
 	list-style-type: none;
-	background-color: lightblue;
 	text-align: center;
 }
+
+ul#menu {
+	width: 100%;
+	height: 0.5%;
+	background-color: #666;
+}
+
 li {
-	margin-top: 0.5%;
-	width: 15%;
-	display: inline-block;
-	padding: 10px;
-	border: 1px solid black;
 	font-family: helvetica;
 }
 
+#menu li {
+	margin-top: 0.5%;
+	width: 16%;
+	display: inline-block;
+	padding: 10px;
+	border: 1px solid black;
+}
+
 a {
+    text-decoration: none;
+    color: orange;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+#about {
+	text-align: center;
+}
+
+header {
+	width: 100%;
+	background-color: #46C3D7;
+}
+
+footer {
+	width: 100%;
+}
+
+#contact {
+	text-align: center;
+}
+
+#con_social,#con_infos {
+	display: inline-block;
+	width: 49%;
+}
+
+.socials_logos {
+	margin: 0;
+	padding: 0;
+	height: 25px;
+	vertical-align: middle;
+	border: none;
+    outline: none;
+}
+
+#toto {
+	margin-left:-5px;
+}
+
+#socials li {
+	vertical-align: middle;
 }
