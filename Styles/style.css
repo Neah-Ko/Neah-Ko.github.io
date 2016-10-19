@@ -64,31 +64,36 @@ a:hover {
 	background-color: darkcyan;
 }
 
+
 #proj_portfolio {
 	min-height: 100vh;
 	background-color: #F0F8FF;
 }
 
 #content_portfolio {
+	padding: 0;
 	margin-left: 10%;
 	margin-right: 10%;
 	border: 1px solid black;
 	min-height: 300px;
 	display: flex;
 	flex-wrap: wrap;
-	padding: 1%;
+}
+
+#content_portfolio a {
+	width: 31%;
+	margin-left: 2.2%;
 }
 
 .projects {
 	height: 50vh;
-	width: 31%;
 	background-repeat: no-repeat;
 	background-size: 160px;
 }
-
+/*
 .projects img {
 	height: 160px;
-}
+}*/
 
 /* ====================== contact ====================== */
 
