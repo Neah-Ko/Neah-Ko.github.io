@@ -40,8 +40,8 @@
 					Samples of my projects over the yers.
 				</div>
 				<div id="proj_portfolio">
-					<ul id="content_portfolio">
-					</ul>
+					<div id="content_portfolio">
+					</div>
 				</div>
 			</div>
 

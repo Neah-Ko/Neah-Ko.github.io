@@ -64,7 +64,6 @@ a:hover {
 	background-color: darkcyan;
 }
 
-
 #proj_portfolio {
 	min-height: 100vh;
 	background-color: #F0F8FF;
@@ -74,36 +73,39 @@ a:hover {
 	padding: 0;
 	margin-left: 10%;
 	margin-right: 10%;
-	border: 1px solid black;
-	min-height: 300px;
 	display: flex;
 	flex-wrap: wrap;
 }
 
 #content_portfolio a {
 	width: 31%;
-	margin-left: 2.2%;
+	padding-left: 1%;
+	padding-right: 1%;
 }
 
 .projects {
 	height: 50vh;
 	background-repeat: no-repeat;
-	background-size: auto 180%;
-}
-.projects h3,h4 {
 	position: relative;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+.projects h3 {
+	position: relative;
+	margin-top: -50%;
+}
+
+.projects h3,h4 {
 	text-align: center;
 	width: 100%;
-	margin-top: -30%;
 }
 
 .projects img {
 	height: 100%;
+	width: 100%;
+	text-align: center;
 }
-/*
-.projects img {
-	height: 160px;
-}*/
 
 /* ====================== contact ====================== */
 

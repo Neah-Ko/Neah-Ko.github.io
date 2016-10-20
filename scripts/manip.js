@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var portfolio = [{
-		"picture":"images/test.jpg",
+		"picture":"images/test_02.jpg",
 		"title":"Iter mini robots",
 		"tags":"NXT Mindstorm",
 		"year":"2013",
@@ -43,7 +43,7 @@ $(document).ready(function(){
 		"link":"6"
 	}];
 	for (var i=portfolio.length-1 ; i >=0 ; i--) {
-		console.log(i);
+
 		var idproject = "project"+portfolio[i]["link"];
 		var project = "<a href='index.php?page="+portfolio[i]["link"]+"'><div class='projects' id='"+idproject+"'>";
 		project += "<img src='"+portfolio[i]["picture"]+"'>";
@@ -51,7 +51,7 @@ $(document).ready(function(){
 		project += "<h4>"+portfolio[i]["tags"]+"</h4>";
 		project += "</div></a>";
 		$('#content_portfolio').append(project);
-		//$('#'+idproject).css("background-image","url('"+portfolio[i]["picture"]+"')");
-		//background-image: url("img_tree.png");
 	}
 });
+
+
