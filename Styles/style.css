@@ -88,7 +88,17 @@ a:hover {
 .projects {
 	height: 50vh;
 	background-repeat: no-repeat;
-	background-size: 160px;
+	background-size: auto 180%;
+}
+.projects h3,h4 {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	margin-top: -30%;
+}
+
+.projects img {
+	height: 100%;
 }
 /*
 .projects img {
