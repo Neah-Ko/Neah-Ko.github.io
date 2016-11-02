@@ -10,53 +10,55 @@
 	</head>
 	<body>
 		<header>
-			<div id="about">
+			<section id="about" data-anchor="about">
 				<h1>Etienne JODRY</h1>
+				<img id="profile_pic" src="images/profile.jpg">
 				<p>
-					I'm an IT student.<br>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Integer auctor blandit justo sed suscipit. Etiam sed lectus commodo, facilisis enim at, posuere arcu.
-					Fusce sollicitudin odio id ante pellentesque, at convallis ex lobortis. Aenean auctor metus nunc.
-					Vivamus a tincidunt erat.
-					Aenean venenatis finibus tellus, non congue justo efficitur et. Sed imperdiet eros ac tempor dictum.
+					I'm an IT student at IUT Annecy-le-Vieux in Savoy, France <br>
 				</p>
-
-			</div>
+			</section>
+			<img id="header_bg" src="images/header.jpg">
 		</header>
 
 		<nav>
 			<ul id="menu">
-				<li><a href="#about">About</a></li>
-				<li class="border"><a href="#my_projects">IT Projects</a></li>
-				<li class="border"><a href="#abilities">Abilities</a></li>
-				<li class="border"><a href="#side_act">Side Activities</a></li>
-				<li class="border"><a href="#contact">Contact</a></li>
+				<a href="#" scroll-point="about"><li>About</li></a>
+				<a href="#" scroll-point="my_projects"><li class="border">IT Projects</li></a>
+				<a href="#" scroll-point="abilities"><li class="border">Abilities</li></a>
+				<a href="#" scroll-point="side_act"><li class="border">Side Activities</li></a>
+				<a href="#" scroll-point="contact"><li class="border">Contact</li></a>
 			</ul>
 		</nav>
 
-		<section>
-			<div id="my_projects">
-				<div id="proj_intro">
-					Samples of my projects over the yers.
-				</div>
-				<div id="proj_portfolio">
-					<div id="content_portfolio">
+		<div id="global">
+			<div id="content_section">
+				<section id="my_projects" data-anchor="my_projects">
+					<div id="proj_portfolio">
+						<h2>Projects</h2>
+						<p>
+							Here are the projects i've done over the years, mostly in autodidact.<br><br>
+							I've always tried to comply with good methods of programation in every situation.<br>
+							To me a project is a constant seek for perfection of results.
+							<br><br>
+						</p>
+						<div id="content_portfolio">
+						</div>
 					</div>
-				</div>
-			</div>
+				</section>
 
-			<div id="abilities">
-				
+				<section id="abilities" data-anchor="abilities">
+					
 
-			</div>
+				</section>
 
-			<div id="side_act">
-				
+				<section id="side_act" data-anchor="side_act">
+					
+				</section>
 			</div>
-		</section>
+		</div>
 
 		<footer>
-			<div id="contact">
+			<section id="contact" data-anchor="contact">
 				<div id="con_social">
 					<h2>Socials</h2>
 					<ul id="socials">
@@ -73,7 +75,7 @@
 					 Etiam sed lectus commodo, facilisis enim at, posuere arcu.
 					</p>
 				</div>
-			</div>
+			</section>
 		</footer>
 	</body>
 </html>
