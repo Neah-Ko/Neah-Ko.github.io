@@ -1,14 +1,10 @@
-<?php 
-if(isset($_POST['send']))
-	include_once("scripts/mail.php");
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<title>Etienne JODRY</title>
+	<link rel="icon" type="image/png" href="images/icon_logo.ico" />
 	<script type="text/javascript" src="scripts/jquery.js"></script>
-	<script type="text/javascript" src="scripts/jquery-ui.js"></script>
 	<script type="text/javascript" src="scripts/jquery-validate.min.js"></script>
 	<script type="text/javascript" src="scripts/data.js"></script>
 	<script type="text/javascript" src="scripts/manip.js"></script>
