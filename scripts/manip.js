@@ -1,78 +1,25 @@
 $(document).ready(function(){
-	//JSon + display
-	var portfolio = [{
-		"picture":"images/test_02.jpg",
-		"title":"Iter mini robots contest",
-		"tags":"NXT Mindstorm",
-		"year":"2013",
-		"link":"1"
-	},
-	{
-		"picture":"images/test.jpg",
-		"title":"Automatic Biathlon targets ",
-		"tags":"Picaxe | App inventor | Electronics",
-		"year":"2015",
-		"link":"2"
-	},
-	{
-		"picture":"images/test.jpg",
-		"title":"ISN section website",
-		"tags":"Web | From scratch",
-		"year":"2015",
-		"link":"3"
-	},
-	{
-		"picture":"images/test.jpg",
-		"title":"The404 Website",
-		"tags":"Web | WordPress",
-		"year":"2016",
-		"link":"4"
-	},
-	{
-		"picture":"images/test.jpg",
-		"title":"Fnac",
-		"tags":"Rich client | Windows Form | C#",
-		"year":"2016",
-		"link":"5"
-	},
-	{
-		"picture":"images/test.jpg",
-		"title":"TripAdvisor",
-		"tags":"Web | From scratch | Object Oriented PHP",
-		"year":"2016",
-		"link":"6"
-
-	},
-	{   
-		"picture":"images/test.jpg",
-		"title":"Projet NINA (in progress)",
-		"tags":"Debian | Daemon | AI | Scrapy",
-		"year":"2017",
-		"link":"7"
-	}];
-	for (var i=portfolio.length-1 ; i >=0 ; i--) {
-		var id = portfolio[i]["link"];
-		var idimg = "prj_img"+id;
-		var idtitle = "prj_title"+id;
-		var iddesc = "prj_desc"+id;
-		var idcontender = "prj_contender"+id;
-		var project = "<a id='"+id+"'><div class='projects'>";
-		project += "<img id='"+idimg+"' src='"+portfolio[i]["picture"]+"'>";
-		project += "<div id='"+idcontender+"' class='proj_txt'><span id='"+idtitle+"'' class='proj_title'>"+portfolio[i]["title"]+"</span><br>";
-		project += "<span id='"+iddesc+"' class='proj_desc'>"+portfolio[i]["tags"]+"</span></div>";
-		project += "</div></a>";
-		$('#content_portfolio').append(project);
-	}
-
-
-
 	//Responsive menu
 	$('nav a').on('click', function() {
-		var scrollAnchor = $(this).attr('scroll-point'),
-		scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
-		$('body,html').animate({
-			scrollTop: scrollPoint
-		}, 500);
+		var scrollAnchor = $(this).attr('scroll-point');
+		if($(this).attr('scroll-point') == "my_projects" && $(window).scrollTop() > $('section[data-anchor="' + scrollAnchor + '"]').offset().top - $(window).height() * 0.09) {
+			var scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top + 10;
+		} else if ((($(this).attr('scroll-point') == "skills") || ($(this).attr('scroll-point') == "side_act")) && ($(window).scrollTop() < $('section[data-anchor="my_projects"]').offset().top - $(window).height() * 0.09)) {
+			var scroll_stop = $('section[data-anchor="my_projects"]').offset().top - $(window).height() * 0.09;
+			$('body,html').animate({
+				scrollTop: scroll_stop
+			}, 5);
+			setTimeout(function() {
+				scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - $(window).height() * 0.09;
+			}, 30);
+		} else {
+			var scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - $(window).height() * 0.09;
+		}
+		setTimeout(function() {
+			$('body,html').animate({
+				scrollTop: scrollPoint
+			}, 500);
+		}, 100);
 		return false;
 	})
 	
@@ -119,34 +66,43 @@ $(document).ready(function(){
 		$('#prj_desc'+id).removeClass('prj_txt_onhover');
 	});
 
-	//
-
-	$('#content_portfolio a').on('click', function() {
-		showlightbox();
-		console.log("coucou");
+	//sendmail
+	$('#button_contact').click(function(){
+		$('#form_error').html("");
+		$.ajax({
+			type: 'POST',
+			cache: false,
+			url: 'scripts/mail.php',
+			data: {
+				name: $('#name').val(),
+				email: $('#email').val(),
+				subject: $('#subject').val(),
+				message: $('#message').val()
+			}, 
+			success: function(msg) {
+				if(msg == true) {
+					var confirm = $('<span />', {
+						class: 'confirm',
+						text: 'Your message have been successfully sent'
+					});
+					$('#form_error').append(confirm);
+					$('#contactForm').trigger("reset");
+				} else {
+					var error = $('<span />', {
+						class: 'error',
+						text: msg
+					});
+					$('#form_error').append(error);
+				}
+			}
+		});
 	});
 
-	function showlightbox(){
-		$('body').append("<div id='bg'></div>");
-		$('body').css("overflow","hidden");
-		$('#bg').append("<div id='close'>X</div>");
-		$('#bg').append("loren ipsum sit dolor");
+	//auto expand textarea
+	function adjust_textarea(h) {
+		h.style.height = "20px";
+		h.style.height = (h.scrollHeight)+"px";
 	}
 
-	$('body').on("click",'#close', function () {
-		hidelightbox();
-	});
 
-	$('body').keyup(function(event) {
-		if(event.which == 27) {
-			hidelightbox();
-		}
-	});
-
-	function hidelightbox(){
-		$('body').css("overflow","visible");
-		$('div').remove('#bg');
-	}
 });
-
-
