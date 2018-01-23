@@ -67,7 +67,7 @@ $(document).ready(function(){
 	});
 
 	//sendmail
-	$('#button_contact').click(function(){
+	/*$('#button_contact').click(function(){
 		$('#form_error').html("");
 		$.ajax({
 			type: 'POST',
@@ -96,7 +96,7 @@ $(document).ready(function(){
 				}
 			}
 		});
-	});
+	});*/
 
 	//auto expand textarea
 	function adjust_textarea(h) {
